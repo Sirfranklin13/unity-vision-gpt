@@ -1,10 +1,13 @@
+
 async function askRomero() {
- const input = document.getElementById('userInput').value;
- const res = await fetch('/.netlify/functions/askRomero', {
- method: 'POST',
- headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ question: input })
- });
- const data = await res.json();
- document.getElementById('response').innerText = data.answer || 'No response from ROMERO';
+    const question = document.getElementById("question").value;
+    const responseElem = document.getElementById("response");
+
+    const response = await fetch("/.netlify/functions/ask-romero", {
+        method: "POST",
+        body: JSON.stringify({ prompt: question })
+    });
+
+    const data = await response.json();
+    responseElem.innerText = data.answer || "No response from ROMERO.";
 }
