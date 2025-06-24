@@ -1,0 +1,3 @@
+body { background: #000010; color: white; font-family: sans-serif; text-align: center; padding: 40px; }
+#app img { width: 120px; animation: pulse 3s infinite ease-in-out; }
+@keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
